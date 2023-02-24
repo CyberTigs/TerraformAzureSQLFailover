@@ -35,6 +35,14 @@ variable "name_dev_prefix" {
   description = "Prefix of the dev resource group name"
 }
 
+variable "sqllogin" {
+    description = "Admin Account name for SQL Server"
+}
+
+variable "sqlloginpwd" {
+    description = "Password for Admin Account login"
+}
+
 variable "tag_prod" {
   default     = "Production"
   description = "Production deployed by terraform"
