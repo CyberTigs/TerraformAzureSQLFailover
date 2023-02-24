@@ -16,8 +16,8 @@ resource "azurerm_mssql_server" "prod_terraform_sql_server_01" {
   resource_group_name          = var.acloud_rg
   location                     = var.location_westus
   version                      = "12.0"
-  administrator_login          = "sqladmin" #001 - move to KV
-  administrator_login_password = "695QjzGrT8nriJO83Qzn27SJvmxW" # 002 - move to KV
+  administrator_login          = var.sqllogin #001 - move to KV
+  administrator_login_password = var.sqlloginpwd # 002 - move to KV
 
   tags = {
     name = "${var.tag_prod}"
@@ -30,8 +30,8 @@ resource "azurerm_mssql_server" "prod_terraform_sql_server_02" {
   resource_group_name          = var.acloud_rg
   location                     = var.location_eastus
   version                      = "12.0"
-  administrator_login          = "sqladmin" #003 - move to KV
-  administrator_login_password = "2EcQkJMt0Ur88z3Im0YGSBfOXi64" #004 -  move to KV
+  administrator_login          = var.sqllogin #003 - move to KV
+  administrator_login_password = var.sqlloginpwd #004 -  move to KV
 
   tags = {
     name = var.tag_prod
